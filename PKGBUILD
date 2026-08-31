@@ -1,7 +1,7 @@
 # Maintainer: Nojjia
 
 pkgname=zen-browser-bin
-pkgver=1.21.10b
+pkgver=1.21.16b
 pkgrel=1
 pkgdesc='Performance oriented Firefox-based web browser'
 arch=('x86_64' 'aarch64')
@@ -51,7 +51,7 @@ options=(!strip !debug)
 source_x86_64=("https://github.com/zen-browser/desktop/releases/download/${pkgver}/zen.linux-${CARCH}.tar.xz")
 source_aarch64=("https://github.com/zen-browser/desktop/releases/download/${pkgver}/zen.linux-${CARCH}.tar.xz")
 source=('zen-browser.desktop')
-sha256sums=('8bc43491b64acf38565b4d7adc5314757d26166decde0d5943cfc2b5e48bc0d6')
+sha256sums=('3fad64d11c1fbc015c024c5b3517fdbfab2f5585bd2ad0b1c39a805ae0ff791a')
 sha256sums_x86_64=('6a134befd30e9618f4d7e50dddb3ae721de117bab728a97c75f9e5c2123a1d0f')
 sha256sums_aarch64=('6a134befd30e9618f4d7e50dddb3ae721de117bab728a97c75f9e5c2123a1d0f')
 
