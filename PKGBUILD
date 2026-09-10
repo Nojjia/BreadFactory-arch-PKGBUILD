@@ -1,7 +1,7 @@
 # Maintainer: Nojjia
 
 pkgname=zen-browser-bin
-pkgver=1.21.16b
+pkgver=1.22b
 pkgrel=1
 pkgdesc='Performance oriented Firefox-based web browser'
 arch=('x86_64' 'aarch64')
@@ -52,8 +52,8 @@ source_x86_64=("https://github.com/zen-browser/desktop/releases/download/${pkgve
 source_aarch64=("https://github.com/zen-browser/desktop/releases/download/${pkgver}/zen.linux-${CARCH}.tar.xz")
 source=('zen-browser.desktop')
 sha256sums=('8bc43491b64acf38565b4d7adc5314757d26166decde0d5943cfc2b5e48bc0d6')
-sha256sums_x86_64=('6a134befd30e9618f4d7e50dddb3ae721de117bab728a97c75f9e5c2123a1d0f')
-sha256sums_aarch64=('6a134befd30e9618f4d7e50dddb3ae721de117bab728a97c75f9e5c2123a1d0f')
+sha256sums_x86_64=('41e725c82a2bee91a351c5fe8f8771f8e2748c7f323ebbb0138dbeaae84afbb8')
+sha256sums_aarch64=('41e725c82a2bee91a351c5fe8f8771f8e2748c7f323ebbb0138dbeaae84afbb8')
 
 package() {
 	local _pkgname='zen-browser'
@@ -72,17 +72,17 @@ package() {
 	)
 
 	# Install a binary wrapper because firefox uses one
-	install -Dvm755 /dev/stdin "${pkgdir}/usr/bin/${_pkgname}" <<END
+	install -Dm755 /dev/stdin "${pkgdir}/usr/bin/${_pkgname}" <<END
 #!/bin/sh
 exec /usr/lib/${_pkgname}/zen "\$@"
 END
 
 	# Install desktop entry
-	install -Dvm644 "${srcdir}/zen-browser.desktop" -t "${pkgdir}/usr/share/applications/"
+	install -Dm644 "${srcdir}/zen-browser.desktop" -t "${pkgdir}/usr/share/applications/"
 
 	# Install application icons
 	for i in 16 32 48 64 128; do
-		install -Dvm644 "${appdir}/browser/chrome/icons/default/default${i}.png" "${pkgdir}/usr/share/icons/hicolor/${i}x${i}/apps/${_pkgname}.png"
+		install -Dm644 "${appdir}/browser/chrome/icons/default/default${i}.png" "${pkgdir}/usr/share/icons/hicolor/${i}x${i}/apps/${_pkgname}.png"
 	done
 	
 	# Use system certificates and Symlink libonnxruntime
@@ -90,7 +90,7 @@ END
 	ln -sfv "/usr/lib/libnssckbi.so" -t "${appdir}"
 
 	# Install policies.json to disable auto-update
-	install -Dvm644 /dev/stdin "${appdir}/distribution/policies.json" <<END
+	install -Dm644 /dev/stdin "${appdir}/distribution/policies.json" <<END
 {
 	"policies": {
 		"DisableAppUpdate": true,
