@@ -1,0 +1,27 @@
+pkgbase = pwvucontrol
+	pkgdesc = Pipewire volume control applet
+	pkgver = 0.5.3
+	pkgrel = 1
+	url = https://github.com/saivert/pwvucontrol
+	arch = x86_64
+	license = GPL-3.0-only
+	checkdepends = appstream-glib
+	makedepends = clang
+	makedepends = meson
+	makedepends = rust
+	makedepends = blueprint-compiler
+	depends = dconf
+	depends = glibc
+	depends = glib2
+	depends = graphene
+	depends = gtk4
+	depends = hicolor-icon-theme
+	depends = libadwaita
+	depends = libgcc
+	depends = libpipewire
+	depends = libwireplumber
+	optdepends = easyeffect: Audio Effects for Pipewire applications
+	source = https://github.com/saivert/pwvucontrol/archive/refs/tags/0.5.3.tar.gz
+	sha256sums = 5ac6db39d8bb347c3447592fbc923465c9e4b001da8e330861a215c964c74e27
+
+pkgname = pwvucontrol
