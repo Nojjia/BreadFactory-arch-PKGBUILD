@@ -1,6 +1,6 @@
 # Maintainer: Nojjia
 pkgname=arduino-ide-v2-bin
-pkgver=2.3.10
+pkgver=2.3.11
 pkgrel=1
 pkgdesc='Arduino prototyping platform IDE, rewrite based on the Theia IDE framework.'
 arch=(x86_64)
@@ -46,7 +46,7 @@ optdepends=(
 conflicts=(arduino-ide-v2 arduino-ide-v2-git arduino-ide arduino-ide-git)
 options=(!debug !strip)
 source=("${url}/releases/download/${pkgver}/arduino-ide_${pkgver}_Linux_64bit.zip")
-sha256sums=('cc8a0b01e763d4646b670ce70c1bc8c389a0fa14ab556dcc0749c03f475a7975')
+sha256sums=('1e009f3c720092e6fae4e71809e0b755058e8c5d59eac7548b288d4f42b5e9b1')
 
 prepare() {
 	rm -rf "$srcdir/arduino-ide_${pkgver}_Linux_64bit/resources/app/plugins/cortex-debug/extension/binary_modules/v12.14.1/win32"
